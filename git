@@ -1,0 +1,190 @@
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   .env.example
+	new file:   .gitattributes
+	new file:   .gitignore
+	new file:   Repositorio - Guia - Frames/LICENSE
+	new file:   Repositorio - Guia - Frames/admin(create).html
+	new file:   Repositorio - Guia - Frames/assets/icons/mCSB_buttons.png
+	new file:   Repositorio - Guia - Frames/assets/img/avatar.jpg
+	new file:   Repositorio - Guia - Frames/assets/img/loginFont.jpg
+	new file:   Repositorio - Guia - Frames/assets/img/sideBar-font.jpg
+	new file:   Repositorio - Guia - Frames/css/bootstrap-material-design.min.css
+	new file:   Repositorio - Guia - Frames/css/bootstrap.min.css
+	new file:   Repositorio - Guia - Frames/css/jquery.mCustomScrollbar.css
+	new file:   Repositorio - Guia - Frames/css/main.css
+	new file:   Repositorio - Guia - Frames/css/material-design-iconic-font.min.css
+	new file:   Repositorio - Guia - Frames/css/ripples.min.css
+	new file:   Repositorio - Guia - Frames/css/sweetalert2.css
+	new file:   Repositorio - Guia - Frames/fonts/Material-Design-Iconic-Font.eot
+	new file:   Repositorio - Guia - Frames/fonts/Material-Design-Iconic-Font.svg
+	new file:   Repositorio - Guia - Frames/fonts/Material-Design-Iconic-Font.ttf
+	new file:   Repositorio - Guia - Frames/fonts/Material-Design-Iconic-Font.woff
+	new file:   Repositorio - Guia - Frames/fonts/Material-Design-Iconic-Font.woff2
+	new file:   Repositorio - Guia - Frames/fonts/glyphicons-halflings-regular.eot
+	new file:   Repositorio - Guia - Frames/fonts/glyphicons-halflings-regular.svg
+	new file:   Repositorio - Guia - Frames/fonts/glyphicons-halflings-regular.ttf
+	new file:   Repositorio - Guia - Frames/fonts/glyphicons-halflings-regular.woff
+	new file:   Repositorio - Guia - Frames/fonts/glyphicons-halflings-regular.woff2
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-light.eot
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-light.svg
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-light.ttf
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-light.woff
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-light.woff2
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-regular.eot
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-regular.svg
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-regular.ttf
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-regular.woff
+	new file:   Repositorio - Guia - Frames/fonts/robotocondensed-regular.woff2
+	new file:   Repositorio - Guia - Frames/home(menu).html
+	new file:   Repositorio - Guia - Frames/index(login).html
+	new file:   Repositorio - Guia - Frames/js/bootstrap.min.js
+	new file:   Repositorio - Guia - Frames/js/jquery-3.1.1.min.js
+	new file:   Repositorio - Guia - Frames/js/jquery.mCustomScrollbar.concat.min.js
+	new file:   Repositorio - Guia - Frames/js/main.js
+	new file:   Repositorio - Guia - Frames/js/material.min.js
+	new file:   Repositorio - Guia - Frames/js/ripples.min.js
+	new file:   Repositorio - Guia - Frames/js/sweetalert2.min.js
+	new file:   Repositorio - Guia - Frames/payments.html
+	new file:   Repositorio - Guia - Frames/period.html
+	new file:   Repositorio - Guia - Frames/registration(pago).html
+	new file:   Repositorio - Guia - Frames/representative(crear_user).html
+	new file:   Repositorio - Guia - Frames/salon(perfil).html
+	new file:   Repositorio - Guia - Frames/school(datos_curso).html
+	new file:   Repositorio - Guia - Frames/section.html
+	new file:   Repositorio - Guia - Frames/student.html
+	new file:   Repositorio - Guia - Frames/subject.html
+	new file:   Repositorio - Guia - Frames/teacher.html
+	new file:   app/Console/Commands/Inspire.php
+	new file:   app/Console/Kernel.php
+	new file:   app/Events/Event.php
+	new file:   app/Exceptions/Handler.php
+	new file:   app/Http/Controllers/AdminController.php
+	new file:   app/Http/Controllers/Auth/AuthController.php
+	new file:   app/Http/Controllers/Auth/PasswordController.php
+	new file:   app/Http/Controllers/Controller.php
+	new file:   app/Http/Controllers/LoginController.php
+	new file:   app/Http/Controllers/MenuController.php
+	new file:   app/Http/Controllers/UsuarioController.php
+	new file:   app/Http/Kernel.php
+	new file:   app/Http/Middleware/Authenticate.php
+	new file:   app/Http/Middleware/EncryptCookies.php
+	new file:   app/Http/Middleware/RedirectIfAuthenticated.php
+	new file:   app/Http/Middleware/VerifyCsrfToken.php
+	new file:   app/Http/Requests/Request.php
+	new file:   app/Http/routes.php
+	new file:   app/Jobs/Job.php
+	new file:   app/Listeners/.gitkeep
+	new file:   app/Policies/.gitkeep
+	new file:   app/Providers/AppServiceProvider.php
+	new file:   app/Providers/AuthServiceProvider.php
+	new file:   app/Providers/EventServiceProvider.php
+	new file:   app/Providers/RouteServiceProvider.php
+	new file:   app/User.php
+	new file:   artisan
+	new file:   bootstrap/app.php
+	new file:   bootstrap/autoload.php
+	new file:   bootstrap/cache/.gitignore
+	new file:   composer.json
+	new file:   composer.lock
+	new file:   config/app.php
+	new file:   config/auth.php
+	new file:   config/broadcasting.php
+	new file:   config/cache.php
+	new file:   config/compile.php
+	new file:   config/database.php
+	new file:   config/filesystems.php
+	new file:   config/mail.php
+	new file:   config/queue.php
+	new file:   config/services.php
+	new file:   config/session.php
+	new file:   config/view.php
+	new file:   database/.gitignore
+	new file:   database/factories/ModelFactory.php
+	new file:   database/migrations/.gitkeep
+	new file:   database/migrations/2014_10_12_000000_create_users_table.php
+	new file:   database/migrations/2014_10_12_100000_create_password_resets_table.php
+	new file:   database/seeds/.gitkeep
+	new file:   database/seeds/DatabaseSeeder.php
+	new file:   git
+	new file:   gulpfile.js
+	new file:   nbproject/private/config.properties
+	new file:   nbproject/private/private.properties
+	new file:   nbproject/project.properties
+	new file:   nbproject/project.xml
+	new file:   package.json
+	new file:   phpunit.xml
+	new file:   public/.htaccess
+	new file:   public/assets/icons/mCSB_buttons.png
+	new file:   public/assets/img/avatar.jpg
+	new file:   public/assets/img/loginFont.jpg
+	new file:   public/assets/img/sideBar-font.jpg
+	new file:   public/css/bootstrap-material-design.min.css
+	new file:   public/css/bootstrap.min.css
+	new file:   public/css/jquery.mCustomScrollbar.css
+	new file:   public/css/main.css
+	new file:   public/css/material-design-iconic-font.min.css
+	new file:   public/css/ripples.min.css
+	new file:   public/css/sweetalert2.css
+	new file:   public/favicon.ico
+	new file:   public/fonts/Material-Design-Iconic-Font.eot
+	new file:   public/fonts/Material-Design-Iconic-Font.svg
+	new file:   public/fonts/Material-Design-Iconic-Font.ttf
+	new file:   public/fonts/Material-Design-Iconic-Font.woff
+	new file:   public/fonts/Material-Design-Iconic-Font.woff2
+	new file:   public/fonts/glyphicons-halflings-regular.eot
+	new file:   public/fonts/glyphicons-halflings-regular.svg
+	new file:   public/fonts/glyphicons-halflings-regular.ttf
+	new file:   public/fonts/glyphicons-halflings-regular.woff
+	new file:   public/fonts/glyphicons-halflings-regular.woff2
+	new file:   public/fonts/robotocondensed-light.eot
+	new file:   public/fonts/robotocondensed-light.svg
+	new file:   public/fonts/robotocondensed-light.ttf
+	new file:   public/fonts/robotocondensed-light.woff
+	new file:   public/fonts/robotocondensed-light.woff2
+	new file:   public/fonts/robotocondensed-regular.eot
+	new file:   public/fonts/robotocondensed-regular.svg
+	new file:   public/fonts/robotocondensed-regular.ttf
+	new file:   public/fonts/robotocondensed-regular.woff
+	new file:   public/fonts/robotocondensed-regular.woff2
+	new file:   public/index.php
+	new file:   public/js/bootstrap.min.js
+	new file:   public/js/jquery-3.1.1.min.js
+	new file:   public/js/jquery.mCustomScrollbar.concat.min.js
+	new file:   public/js/main.js
+	new file:   public/js/material.min.js
+	new file:   public/js/ripples.min.js
+	new file:   public/js/sweetalert2.min.js
+	new file:   public/robots.txt
+	new file:   public/web.config
+	new file:   readme.md
+	new file:   resources/assets/sass/app.scss
+	new file:   resources/lang/en/auth.php
+	new file:   resources/lang/en/pagination.php
+	new file:   resources/lang/en/passwords.php
+	new file:   resources/lang/en/validation.php
+	new file:   resources/views/Login.blade.php
+	new file:   resources/views/Menu.blade.php
+	new file:   resources/views/admin.blade.php
+	new file:   resources/views/crear_usuario.blade.php
+	new file:   resources/views/errors/503.blade.php
+	new file:   resources/views/perfil.blade.php
+	new file:   resources/views/period.blade.php
+	new file:   resources/views/vendor/.gitkeep
+	new file:   resources/views/welcome.blade.php
+	new file:   server.php
+	new file:   storage/app/.gitignore
+	new file:   storage/app/public/.gitignore
+	new file:   storage/framework/.gitignore
+	new file:   storage/framework/cache/.gitignore
+	new file:   storage/framework/sessions/.gitignore
+	new file:   storage/framework/views/.gitignore
+	new file:   storage/logs/.gitignore
+	new file:   tests/ExampleTest.php
+	new file:   tests/TestCase.php
+
