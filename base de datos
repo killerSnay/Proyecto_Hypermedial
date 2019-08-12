@@ -1,0 +1,269 @@
+create database project;
+use project;
+
+--MODULO DE SEGURIDAD
+
+create table perfilxUsuario(
+idPerfil int primary key not null auto_increment,
+idUsuario int not null,
+nombreAtributo varchar(50)
+)
+create table Usuario(
+idUsuario int primary key not null auto_increment,
+nombre varchar(50),
+apellido varchar (50),
+idUsuarioCreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null,
+constraint idUsuario foreign key (idUsuario) references perfilxUsuario (idPerfil)
+)
+create table Perfil(
+idPerfil int primary key not null auto_increment,
+descripcion varchar(50),
+estado varchar(50) not null,
+idUsuariocreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null,
+tabla varchar(50) not null,
+constraint idPerfil foreign key (idPerfil) references perfilxUsuario (idPerfil)
+)
+create table PermisosMenuxPerfil(
+idPermiso int primary key not null auto_increment,
+idPerfil int not null,
+idOpcion int not null,
+estado varchar(50) not null,
+idUsuariocreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null,
+constraint idPermiso foreign key (idPermiso) references Perfil (idPerfil)
+)
+create table OpcionesMenu(
+idOpcion int primary key not null auto_increment,
+descripcion varchar(50),
+ruta varchar(50) not null,
+idUsuariocreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null,
+constraint idOpcion foreign key (idOpcion) references PermisosMenuxPerfil (idPermiso)
+)
+create table Permisos(
+idPermiso int primary key not null auto_increment,
+descripcion varchar(50),
+estado varchar(50) not null,
+idUsuariocreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null,
+constraint idPermisos foreign key (idPermiso) references PermisosMenuxPerfil (idPermiso)
+)
+create table Estudiante(
+idEstudiante int primary key not null auto_increment,
+nombre varchar(50) not null,
+apellido varchar(50) not null,
+correo varchar(50) not null
+)
+
+--MODULO DE GESTION
+create table Curso(
+IdCurso int primary key not null auto_increment,
+descripcion varchar(50),
+descripcionLarga varchar(100),
+preRequisito varchar(50) not null,
+pubObjetivo varchar(50) not null,
+estado varchar(50) not null,
+idUsuariocreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null,
+constraint idcurso foreign key(idCurso) references Usuario(idUsuario) 
+)
+
+create table Nivel(
+IdNivel int primary key not null auto_increment,
+descripcion varchar(50),
+precio int not null,
+idcurso int not null,
+estado varchar(50) not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null,
+constraint FK_Nivel_idcurso foreign key(idcurso) references Curso(idCurso)
+)
+create table AreadeConocimiento(
+idArea int primary key not null auto_increment,
+descripcion varchar(50),
+estado varchar(50),
+idUsuariocreacion int not null,
+idUsuarioModificacion int not null,
+fechaCreacion date not null,
+fechaModificacion date not null,
+constraint idArea foreign key(idArea) references Curso(idCurso)
+)
+create table Capitulo(
+idCapitulo int primary key not null auto_increment,
+descrpcion varchar(50),
+descripcionLarga varchar(100),
+idNivel int not null,
+estado varchar(50),
+fechaCreacion date not null,
+fechaModificacion date not null,
+constraint FK_Capitulo_idNivel foreign key(idNivel) references Nivel(idNivel)
+)
+create table Objetivo(
+idObjetivo int primary key not null auto_increment,
+descripcion varchar(50) not null,
+idCapitulo int not null,
+constraint FK_Objetivo_idCapitulo foreign key(idCapitulo) references Capitulo(idCapitulo)
+)
+create table Evaluacion(
+idEvaluacion int primary key not null auto_increment,
+descripcion varchar(50) not null,
+idCapitulo int not null,
+estado varchar(50) not null,
+fechaCreacion date not null,
+fechaModificacion date not null,
+constraint FK_Evaluacion_idCapitulo foreign key(idCapitulo) references capitulo(idCapitulo)
+)
+create table preguntaEvaluacion(
+idPreguntaEv int primary key not null auto_increment,
+planteamiento varchar(50) not null,
+nota int not null,
+estado varchar (50),
+idEvaluacion int not null,
+fechaCreacion date not null,
+fechaModificacion date not null,
+constraint FK_preguntaEvaluacion_idEvaluacion foreign key(idEvaluacion) references Evaluacion(idEvaluacion)
+)
+create table opcionRespuestaEvaluacion(
+idOpcRespEv int primary key not null auto_increment,
+descripcion varchar(50)not null,
+correcta varchar(40) not null,
+idPreguntaEv int not null,
+constraint FK_opcionRespuestaEvaluacion_idPreguntaEv foreign key(idPreguntaEv) references preguntaEvaluacion(idPreguntaEv)
+)
+create table Indicador(
+idIndicador int primary key not null auto_increment,
+descripcion varchar(50) not null,
+idUsuarioCreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null
+)
+create table preguntaxIndicador(
+idPreguntaEv int not null,
+idIndicador int not null,
+peso int not null,
+constraint idPreguntaEv foreign key(idPreguntaEv) references preguntaEvaluacion(idPreguntaEv),
+constraint idIndicador foreign key(idIndicador) references Indicador(idIndicador)
+)
+
+create table indicadorxObjetivo(
+idIndicador int not null,
+idObjetivo int not null,
+constraint Fk_indicadorxObjetivo_idIndicador foreign key(idIndicador) references Indicador(idIndicador),
+constraint Fk_indicadorxObjetivo_idObjetivo foreign key(idObjetivo) references Objetivo(IdObjetivo)
+)
+create table Tema(
+idTema int primary key not null auto_increment,
+descripcion varchar(50) not null,
+idCapitulo int not null,
+fechaCreacion date not null,
+fechamodificacion date not null,
+constraint FK_Tema_idCapitulo foreign key (idCapitulo) references Capitulo(idCapitulo)
+)
+create table Cuestionario(
+idCuestionario int primary key not null auto_increment,
+descripcion varchar(50) not null,
+estado varchar(50) not null,
+idTema int not null,
+fechaCreacion date not null,
+fechamodificacion date not null,
+constraint FK_Cuestionario_idTema foreign key (idTema) references Tema(idTema)
+)
+create table preguntaCuestionario(
+idPregunta int primary key not null auto_increment,
+planteamiento varchar(50) not null,
+idCuestionario int not null,
+constraint FK_preguntaCuestionario_idCuestionario foreign key(idCuestionario) references Cuestionario(idCuestionario)
+)
+create table opcionRespuesta(
+idOcpResp int primary key not null auto_increment,
+descripcion varchar(50) not null,
+correcta varchar(40) not null,
+idPregunta int not null,
+constraint FK_opcionRespuesta_idPregunta foreign key (idPregunta) references preguntaCuestionario(idPregunta) 
+)
+create table tipoRecurso(
+idTipoRecurso int primary key not null auto_increment,
+descripcion varchar(50) not null,
+permiteDescarga varchar(40) not null,
+formaVizualizar varchar(40) not null,
+icono varchar(40) not null,
+estado varchar(50) not null,
+idUsuariocreacion int not null,
+fechaCreacion date not null,
+idUsuarioModificacion int not null,
+fechaModificacion date not null
+)
+create table Recurso(
+idRecurso int primary key not null auto_increment,
+descripcion varchar(50) not null,
+ubicacion varchar(50) not null,
+idTema int not null,
+idTipoRecurso int not null,
+estado varchar(50) not null,
+fechaCreacion date not null,
+fechamodificacion date not null,
+constraint FK_Recurso_idTema foreign key(idTema) references Tema(idTema),
+constraint FK_Recurso_idTipoRecurso foreign key(idTipoRecurso) references TipoRecurso(idTipoRecurso)
+)
+create table Contenido(
+idContenido int primary key not null auto_increment,
+descripcion varchar(50) not null,
+contenido varchar(50) not null,
+idTema int not null,
+fechaCreacion date not null,
+fechamodificacion date not null,
+constraint FK_Contenido_idTema foreign key(idTema) references Tema(idTema)
+)
+
+
+--Modulo Cliente
+create table notaEvaluacion(
+idNota int primary key not null auto_increment,
+nota varchar(50) not null,
+idEstudiante int not null,
+fechaCreacion date not null,
+tiempo time not null,
+constraint FK_notaEvaluacion_idEstudiante foreign key(idEstudiante) references Estudiante(idEstudiante) 
+)
+create table respuestaEvaluacion(
+idOpcRespEv int primary key not null auto_increment,
+idNota int not null,
+nota varchar(50) not null,
+constraint FK_respuestaEvaluacion_idOpcRespEv foreign key(idOpcRespEv) references opcionRespuestaEvaluacion(idOpcRespEv),
+constraint FK_respuestaEvaluacion_idNota foreign key(idNota) references notaEvaluacion(idNota)
+)
+create table contenidoLeido(
+idContenido int not null,
+idEstudiante int not null,
+constraint FK_contenidoleido_idContenido foreign key(idContenido) references Contenido(idContenido),
+constraint FK_contenidoleido_idEstudiante foreign key(idEstudiante) references Estudiante(idEstudiante)
+)
+create table recursoVisto(
+idContenido int not null,
+idEstudiante int not null,
+constraint FK_recursoVisto_idContenido foreign key(idContenido) references Contenido(idContenido),
+constraint FK_recursoVisto_idEstudiante foreign key(idEstudiante) references Estudiante(idEstudiante)
+)
+create table nivelxEstudiante(
+idEstudiante int not null,
+idNivel int not null,
+estado varchar(50) not null,
+constraint FK_nivelxEstudiante_idEstudiante foreign key(idEstudiante) references Estudiante(idEstudiante),
+constraint FK_nivelxEstudiante_idNivel foreign key(idNivel) references Nivel(idNivel)
+)
